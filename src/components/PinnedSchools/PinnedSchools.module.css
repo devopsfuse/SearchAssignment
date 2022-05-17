@@ -1,0 +1,20 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 14px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.heading {
+  font-family: "Rubik";
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  color: #455a64;
+}

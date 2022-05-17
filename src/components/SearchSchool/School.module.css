@@ -1,0 +1,13 @@
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.readMore {
+  color: #303f9f;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Rubik";
+}

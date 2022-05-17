@@ -1,0 +1,51 @@
+.main {
+  padding: 8px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.info {
+  height: 45vh;
+  background: #455a64;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.info p {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Rubik";
+  font-size: 36px;
+}
+
+.search {
+  margin-right: 10px;
+}
+
+.schools {
+  background: #eceff1;
+  padding: 12px;
+}
+
+.searchColleges {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Rubik";
+  font-size: 24px;
+  color: #455a64;
+}
+
+.schoolList {
+  height: 40vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.schoolList::-webkit-scrollbar {
+  display: none;
+}

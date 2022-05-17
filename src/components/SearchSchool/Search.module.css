@@ -1,0 +1,12 @@
+.seacrh {
+    padding: 12px;
+}
+
+.seacrh p {
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Rubik";
+  font-size: 20px;
+  text-decoration: underline;
+  color: #455a64;
+}
