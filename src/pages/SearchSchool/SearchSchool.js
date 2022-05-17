@@ -106,7 +106,7 @@ const SearchSchool = () => {
           <p className={classes.searchColleges}>Search colleges</p>
 
           <InputGroup className="mb-3">
-            <FormControl placeholder="Enter the school name" ref={searchRef} />
+            <FormControl placeholder="Looking for a specific college?" ref={searchRef} />
             <Button
               variant="secondary"
               type="button"

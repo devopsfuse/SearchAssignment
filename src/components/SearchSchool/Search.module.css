@@ -1,12 +1,25 @@
 .seacrh {
-    padding: 12px;
+  padding: 12px;
 }
 
-.seacrh p {
+.seacrhHeading {
   font-style: italic;
   font-weight: bold;
   font-family: "Rubik";
   font-size: 20px;
   text-decoration: underline;
+  color: #455a64;
+}
+
+.section {
+  border-bottom: 3px solid #455a64;
+  margin-bottom: 10px;
+}
+
+.sectionHeading {
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Rubik";
+  font-size: 14px;
   color: #455a64;
 }

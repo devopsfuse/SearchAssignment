@@ -1,7 +1,7 @@
 .main {
   padding: 8px;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .info {
@@ -40,7 +40,7 @@
 }
 
 .schoolList {
-  height: 40vh;
+  /* height: 40vh; */
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
