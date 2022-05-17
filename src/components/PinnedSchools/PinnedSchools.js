@@ -8,7 +8,7 @@ const PinnedSchools = ({ pinnedSchools }) => {
 
       <div className={`d-flex ${classes.main}`}>
         {pinnedSchools.map((school) => (
-          <PinnedSchool school={school} />
+          <PinnedSchool key={school.id} school={school} />
         ))}
       </div>
     </div>

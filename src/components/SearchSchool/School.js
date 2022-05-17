@@ -1,17 +1,18 @@
 import { Fragment, useState } from "react";
 import { Card, Toast, ToastContainer } from "react-bootstrap";
 import { AiOutlinePushpin, AiFillPushpin } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 import classes from "./School.module.css";
 
 const School = (props) => {
   const school = props.school;
 
+  const history = useHistory();
+
   const [pinned, setPinned] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
   const pinSchoolHandler = () => {
-    console.log("called");
-    console.log(props.pinnedListSize);
     if (props.pinnedListSize < 8) {
       setPinned((prevState) => !prevState);
       props.onPin(school);
@@ -23,6 +24,10 @@ const School = (props) => {
   const unpinSchoolHandler = () => {
     props.onUnpin(school.id);
     setPinned((prevState) => !prevState);
+  };
+
+  const readMoreClickHandler = () => {
+    history.push("school-detail", { school: school });
   };
 
   return (
@@ -56,7 +61,12 @@ const School = (props) => {
         </div>
 
         <p className="col-10 offset-2">{school.about.slice(0, 100)}...</p>
-        <span className={`offset-2 ${classes.readMore}`}>Read More...</span>
+        <span
+          className={`offset-2 ${classes.readMore}`}
+          onClick={readMoreClickHandler}
+        >
+          Read More...
+        </span>
       </Card>
 
       <ToastContainer position="bottom-end">
@@ -68,7 +78,7 @@ const School = (props) => {
           autohide
         >
           <Toast.Body>
-            <b>You can not pin more than 6 colleges!</b>
+            <b>You can not pin more than 8 colleges!</b>
           </Toast.Body>
         </Toast>
       </ToastContainer>

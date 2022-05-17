@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login/Login";
+import SchoolDetail from "./pages/SchoolDetail/SchoolDetail";
 import SearchSchool from "./pages/SearchSchool/SearchSchool";
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
 
       <Route path="/school-search" exact>
         <SearchSchool />
+      </Route>
+
+      <Route path="/school-detail" exact>
+        <SchoolDetail />
       </Route>
     </Switch>
   );
