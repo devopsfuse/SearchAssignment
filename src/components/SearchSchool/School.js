@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
-import { Card, Toast, ToastContainer } from "react-bootstrap";
+import { Button, Card, Toast, ToastContainer } from "react-bootstrap";
 import { AiOutlinePushpin, AiFillPushpin } from "react-icons/ai";
+import { BiUserPlus } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import classes from "./School.module.css";
 
@@ -52,21 +53,49 @@ const School = (props) => {
               </p>
             </div>
 
-            {pinned ? (
-              <AiFillPushpin onClick={unpinSchoolHandler} />
-            ) : (
-              <AiOutlinePushpin onClick={pinSchoolHandler} />
-            )}
+            <div className="d-flex">
+              <Button size="sm" variant="secondary" type="button">
+                {pinned ? (
+                  <AiFillPushpin onClick={unpinSchoolHandler} />
+                ) : (
+                  <AiOutlinePushpin onClick={pinSchoolHandler} />
+                )}
+              </Button>
+
+              <Button
+                className="mx-1"
+                size="sm"
+                variant="secondary"
+                type="button"
+              >
+                <BiUserPlus /> Follow
+              </Button>
+            </div>
           </div>
         </div>
 
         <p className="col-10 offset-2">{school.about.slice(0, 100)}...</p>
         <span
-          className={`offset-2 ${classes.readMore}`}
+          className={`offset-2 mb-3 ${classes.readMore}`}
           onClick={readMoreClickHandler}
         >
           Read More...
         </span>
+
+        <div className="d-flex offset-2 mb-3">
+          <CourseButton>4-Year</CourseButton>
+          <CourseButton>2-Year</CourseButton>
+          <CourseButton>B.Tech</CourseButton>
+          <CourseButton>Diploma</CourseButton>
+          <CourseButton>BCA</CourseButton>
+          <CourseButton>4-Year</CourseButton>
+          <CourseButton>2-Year</CourseButton>
+          <CourseButton>B.Tech</CourseButton>
+          <CourseButton>Diploma</CourseButton>
+          <CourseButton>BCA</CourseButton>
+        </div>
+
+        <img className="col-10 offset-2" height="200" src={school.logo} />
       </Card>
 
       <ToastContainer position="bottom-end">
@@ -83,6 +112,14 @@ const School = (props) => {
         </Toast>
       </ToastContainer>
     </Fragment>
+  );
+};
+
+const CourseButton = (props) => {
+  return (
+    <Button variant="outline-secondary" style={{ borderRadius: "0" }}>
+      {props.children}
+    </Button>
   );
 };
 
