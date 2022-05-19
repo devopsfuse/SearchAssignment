@@ -1,5 +1,6 @@
+import { Alert, Card, Snackbar } from "@mui/material";
 import { Fragment, useState } from "react";
-import { Button, Card, Toast, ToastContainer } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { AiOutlinePushpin, AiFillPushpin } from "react-icons/ai";
 import { BiUserPlus } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
@@ -11,14 +12,14 @@ const School = (props) => {
   const history = useHistory();
 
   const [pinned, setPinned] = useState(false);
-  const [showToast, setShowToast] = useState(false);
+  const [showALert, setShowALert] = useState(false);
 
   const pinSchoolHandler = () => {
     if (props.pinnedListSize < 8) {
       setPinned((prevState) => !prevState);
       props.onPin(school);
     } else {
-      setShowToast(true);
+      setShowALert(true);
     }
   };
 
@@ -33,7 +34,7 @@ const School = (props) => {
 
   return (
     <Fragment>
-      <Card className="p-2 mb-3">
+      <Card className="p-3 mb-3">
         <div className="d-flex align-items-center">
           <div className="col-2 d-flex justify-content-center">
             <img
@@ -47,7 +48,12 @@ const School = (props) => {
               <p className="fw-bold fs-5 p-0 m-0">{school.name}</p>
               <p className="fw-bold p-0 m-0" style={{ fontSize: "10px" }}>
                 {`${school.city}, ${school.state}`}
-                <a className="mx-3" href={school.logo} target="_blank">
+                <a
+                  className="mx-3"
+                  href={school.logo}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {school.url}
                 </a>
               </p>
@@ -95,22 +101,24 @@ const School = (props) => {
           <CourseButton>BCA</CourseButton>
         </div>
 
-        <img className="col-10 offset-2" height="200" src={school.logo} />
+        <img
+          className="col-10 offset-2"
+          height="200"
+          src={school.logo}
+          alt={school.name}
+        />
       </Card>
 
-      <ToastContainer position="bottom-end">
-        <Toast
-          bg="secondary"
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={4000}
-          autohide
-        >
-          <Toast.Body>
-            <b>You can not pin more than 8 colleges!</b>
-          </Toast.Body>
-        </Toast>
-      </ToastContainer>
+      <Snackbar
+        open={showALert}
+        autoHideDuration={4000}
+        onClose={() => setShowALert(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      >
+        <Alert severity="error" sx={{ width: "100%" }}>
+          You can not pin more than 8 colleges!
+        </Alert>
+      </Snackbar>
     </Fragment>
   );
 };

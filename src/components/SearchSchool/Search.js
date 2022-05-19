@@ -74,6 +74,67 @@ const Search = (props) => {
               </Form.Group>
 
               <hr className="mb-3" />
+              {/* 
+              <FormControl className="mb-3">
+                <FormLabel>Select Distance:</FormLabel>
+                <FormGroup aria-label="SelectDistance">
+                  <FormControlLabel
+                    value="2 miles"
+                    label="2 miles (walking distance)"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+
+                  <FormControlLabel
+                    value="50 miles"
+                    label="50 miles (moderate drive)"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+
+                  <FormControlLabel
+                    value="500 miles"
+                    label="500 miles (short flight)"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+
+                  <FormControlLabel
+                    value="2000 miles"
+                    label="2,000 miles (long flight)"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+                </FormGroup>
+              </FormControl>
+
+              <hr className="mb-3" /> */}
+
+              {/* <FormControl className="mb-3">
+                <FormLabel>Neighborhood Type</FormLabel>
+                <FormGroup aria-label="NeighborhoodType">
+                  <FormControlLabel
+                    value="Urban"
+                    label="Urban: Located in a city"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+
+                  <FormControlLabel
+                    value="Suburban"
+                    label="Suburban: In small cities, large towns or residential areas near large cities"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+
+                  <FormControlLabel
+                    value="Rural"
+                    label="Rural: Often near farms and wilderness areas and small towns"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+                </FormGroup>
+              </FormControl> */}
 
               <Form.Group className="mb-3">
                 <Form.Label>Select Distance:</Form.Label>
@@ -106,6 +167,7 @@ const Search = (props) => {
                 <div className="offset-1">
                   <Form.Check
                     type="checkbox"
+                    labelPlacement="start"
                     label="Urban: Located in a city"
                   />
                   <Form.Check
